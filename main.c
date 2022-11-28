@@ -159,7 +159,7 @@ void menuExibirListas(Lista* pessoas, Lista* gibis, Lista* fila_pessoas, Lista* 
 	break;
 	case 4:
 		listarListaGibi(pilha_gibis);	
-	default:
+	break;
 	case 5:
 		listarListaPessoa(pessoas);
 		puts("digite o id da pessoa que deseja visualisar os gibis");
@@ -168,6 +168,8 @@ void menuExibirListas(Lista* pessoas, Lista* gibis, Lista* fila_pessoas, Lista* 
 		break;
 	}
 }
+
+
 
 
 int main (){
@@ -219,7 +221,7 @@ int main (){
 			// o -1 já que a lista começa com o elemento 0
 			remover(pilha_gibis, (pilha_gibis->tamanho-1));
 			puts("deseja que a pessoa volte para o final da fila?(s/n)\n");
-			scanf("%c", &choice);
+			scanf(" %[^\n]s", &choice);
 			if(choice == 's'){
 				inserir(fila_pessoas, buscarPessoa(fila_pessoas,0));
 			}
@@ -236,9 +238,5 @@ int main (){
             break;
         }
     }
-    
-
-
-
     return 0;
 }
